@@ -1,0 +1,68 @@
+/* Import Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Set the font family for the HTML element */
+html {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Set the background color for the body element */
+body {
+  background-color: #F8FAFC;
+}
+
+/* Style the h1 element */
+h1 {
+  margin: 32px 0;
+  color: #0F172A;
+  font-size: 24px;
+}
+
+/* Style the completed to-do items */
+.complete {
+  text-decoration: line-through;
+  color: #F1F5F9;
+  opacity: 50%;
+}
+
+/* Style the to-do list item container */
+.todolist {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px auto;
+  color: #F1F5F9;
+  background-color: #0F172A;
+  padding: 12px;
+  border-radius: 10px;
+  width: 28%;
+}
+
+/* Style the icons container */
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* Style the delete icon */
+.delete {
+  width: 20%;
+  height: 20%;
+  margin-right: 5px;
+  color: #F1F5F9;
+}
+
+/* Style the edit icon */
+.edit {
+  width: 20%;
+  height: 20%;
+  margin-right: 5px;
+  color: #F1F5F9;
+}
