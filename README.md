@@ -58,7 +58,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
         value: ''
     })
     
-    // `Function to update the todo item` //
+    // Function to update the todo item //
     const submitUpdate = value => {
         updateTodo(edit.id, value)
         setEdit({
@@ -67,19 +67,19 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
         })
     }
 
-    // If the edit state is not null, then display the TodoSecondary component for editing the todo item
+    // If the edit state is not null, then display the TodoSecondary component for editing the todo item //
     if(edit.id) {
         return <TodoSecondary edit={edit} onSubmit={submitUpdate} />
     }
 
-    // If the edit state is null, then display the todos using map function
+    // If the edit state is null, then display the todos using map function //
     return todos.map((todo, index) => (
         <div className={todo.isComplete ? 'todolist complete' : 'todolist'} key={index}>
 
-            {/* Display the todo text and attach the completeTodo function to it */}
+            // Display the todo text and attach the completeTodo function to it //
             <div key={todo.id} onClick={() => completeTodo(todo.id)}> {todo.text} </div>
             
-            {/* Display the icons for editing, completing and deleting the todo */}
+            // Display the icons for editing, completing and deleting the todo //
             <div className='icons'>
                 <UilCheck onClick={() => completeTodo(todo.id)} className='complete'/>
                 <UilPen onClick={() => setEdit({ id: todo.id, value: todo.text })} className='edit'/>
@@ -89,13 +89,13 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
     ))
 }
 
-// Export the Todo component
+// Export the Todo component //
 export default Todo
 ```
 
 ## `TodoSecondary.js`
 
-This part is taskForm and add task/ update task 
+This part is taskForm and add task/update task 
 
 ```
 import React, { useState, useEffect, useRef } from 'react';
@@ -103,36 +103,36 @@ import React, { useState, useEffect, useRef } from 'react';
 function TodoSecondary(props) {
   const [input, setInput] = useState('');
 
-  // Create a reference to the input element so that it can be focused
+  // Create a reference to the input element so that it can be focused //
   const inputRef = useRef(null);
 
-  // Focus on the input element when the component mounts
+  // Focus on the input element when the component mounts //
   useEffect(() => {
     inputRef.current.focus();
   }, []);
 
-  // Update the input state when the user types into the input field
+  // Update the input state when the user types into the input field //
   const handleChange = e => {
     setInput(e.target.value);
   };
 
-  // Submit the form when the user clicks the "Add Task" or "Edit Task" button
+  // Submit the form when the user clicks the "Add Task" or "Edit Task" button //
   const handleSubmit = e => {
     e.preventDefault();
 
-    // Generate a random ID for the new task if one does not exist
+    // Generate a random ID for the new task if one does not exist //
     const id = props.edit?.id || Math.floor(Math.random() * 100);
 
-    // Create a new task object with the input text and ID
+    // Create a new task object with the input text and ID //
     const newTask = {
       id: id,
       text: input
     };
 
-    // Call the onSubmit function passed down as a prop with the new task object
+    // Call the onSubmit function passed down as a prop with the new task object //
     props.onSubmit(newTask);
 
-    // Clear the input field
+    // Clear the input field //
     setInput('');
   };
 
@@ -142,7 +142,7 @@ function TodoSecondary(props) {
         className="flex flex-col gap-5 md:flex-row md:gap-5 items-center"
         onSubmit={handleSubmit}
       >
-        {/* Use the inputRef to focus on the input field */}
+        // Use the inputRef to focus on the input field //
         <input
           type="text"
           placeholder={props.edit ? 'Edit Task' : 'Add Task'}
@@ -174,44 +174,49 @@ import TodoSecondary from './TodoSecondary';
 import TodoMain from './TodoMain';
 
 function TodoTertiary() {
-  // useState hook to store the todo items in an array
+
+  // useState hook to store the todo items in an array //
   const [todos, setTodos] = useState([]);
 
-  // function to add a new todo item
+  // function to add a new todo item //
   const addTodo = todoMain => {
-    // Check if the input field is empty or only contains whitespace characters
+  
+    // Check if the input field is empty or only contains whitespace characters //
     if (!todoMain.text || /^\s*$/.test(todoMain.text)) {
       return;
     }
 
-    // Add the new todo item to the beginning of the array using the spread operator
+    // Add the new todo item to the beginning of the array using the spread operator //
     const newTodos = [todoMain, ...todos];
     setTodos(newTodos);
   };
 
-  // function to update a todo item
+  // function to update a todo item //
   const updateTodo = (todoId, newValue) => {
-    // Check if the input field is empty or only contains whitespace characters
+  
+    // Check if the input field is empty or only contains whitespace characters //
     if (!newValue.text || /^\s*$/.test(newValue.text)) {
       return;
     }
 
-    // Update the todo item with the new value and return a new array using the map method
+    // Update the todo item with the new value and return a new array using the map method //
     setTodos(prevTodos =>
       prevTodos.map(item => (item.id === todoId ? newValue : item))
     );
   };
 
-  // function to remove a todo item
+  // function to remove a todo item //
   const removeTodo = id => {
-    // Create a new array of todo items excluding the one with the specified id using the filter method
+  
+    // Create a new array of todo items excluding the one with the specified id using the filter method //
     const removedArr = [...todos].filter(todoMain => todoMain.id !== id);
     setTodos(removedArr);
   };
 
-  // function to mark a todo item as completed or incomplete
+  // function to mark a todo item as completed or incomplete //
   const completeTodo = id => {
-    // Update the isComplete property of the todo item with the specified id and return a new array using the map method
+  
+    // Update the isComplete property of the todo item with the specified id and return a new array using the map method //
     setTodos(prevTodos =>
       prevTodos.map(todoMain => {
         if (todoMain.id === id) {
@@ -229,10 +234,10 @@ function TodoTertiary() {
     <>
       <h1 className='text-center text-3xl font-bold mx-8'>Task to do</h1>
 
-      {/* Pass the addTodo function as a prop to the TodoSecondary component */}
+      // Pass the addTodo function as a prop to the TodoSecondary component //
       <TodoSecondary onSubmit={addTodo} />
       
-      {/* Pass the todos array and the functions to manipulate it as props to the TodoMain component */}
+      // Pass the todos array and the functions to manipulate it as props to the TodoMain component //
       <TodoMain
         todos={todos}
         completeTodo={completeTodo}
