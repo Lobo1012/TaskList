@@ -38,7 +38,9 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## Code Explaination
 
-## `TodoMAin.js`
+## `TodoMain.js`
+
+This part are only an update, edit and complete icon button
 
 ```
 // Import necessary packages and components
@@ -91,6 +93,8 @@ export default Todo
 ```
 
 ## `TodoSecondary.js`
+
+This part is taskForm and add task/ update task 
 
 ```
 import React, { useState, useEffect, useRef } from 'react';
@@ -160,6 +164,8 @@ export default TodoSecondary;
 ```
 
 ## `TodoTertiary`
+
+This part is the TaskList which is only pop up if the `TodoSecondary` or the form, submit the task
 
 ```
 import React, { useState } from 'react';
