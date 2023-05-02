@@ -6,18 +6,18 @@ A simple todoTaskApp can add, delete and modify
 
 In the project directory, you can run:
 
-### `npm start`
+## `npm start`
 
 Runs the app in the development mode.\
 
 The page will reload when you make changes.
 You may also see any lint errors in the console.
 
-### `npm test`
+## `npm test`
 
 Launches the test runner in the interactive watch mode.\
 
-### `npm run build`
+## `npm run build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -25,7 +25,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-### `npm run eject`
+## `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
@@ -40,6 +40,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## `TodoMAin.js`
 
+```
 // Import necessary packages and components
 import React from 'react'
 import { useState } from 'react'
@@ -87,10 +88,11 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
 
 // Export the Todo component
 export default Todo
-
+```
 
 ## `TodoSecondary.js`
 
+```
 import React, { useState, useEffect, useRef } from 'react';
 
 function TodoSecondary(props) {
@@ -155,10 +157,11 @@ function TodoSecondary(props) {
 }
 
 export default TodoSecondary;
-
+```
 
 ## `TodoTertiary`
 
+```
 import React, { useState } from 'react';
 import TodoSecondary from './TodoSecondary';
 import TodoMain from './TodoMain';
@@ -234,4 +237,4 @@ function TodoTertiary() {
 }
 
 export default TodoTertiary;
-
+```
