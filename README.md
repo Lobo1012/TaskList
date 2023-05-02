@@ -1,23 +1,23 @@
-# TodoTask Using React 
+### TodoTask Using React 
 
 A simple todoTaskApp can add, delete and modify
 
-# Project setup
+### Project setup
 
 In the project directory, you can run:
 
-# `npm start`
+### `npm start`
 
 Runs the app in the development mode.\
 
 The page will reload when you make changes.
 You may also see any lint errors in the console.
 
-# `npm test`
+### `npm test`
 
 Launches the test runner in the interactive watch mode.\
 
-# `npm run build`
+### `npm run build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -25,7 +25,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-# `npm run eject`
+### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
@@ -36,11 +36,11 @@ Instead, it will copy all the configuration files and the transitive dependencie
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.\
 
 
-# Code Explanation
+### Code Explanation
 
 This is the code explanation in every function  `// explanation //`
 
-# `TodoMain.js`
+### `TodoMain.js`
 
 This part are only an update, edit and complete icon button
 
@@ -95,7 +95,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
 export default Todo
 ```
 
-# `TodoSecondary.js`
+### `TodoSecondary.js`
 
 This part is taskForm and add task/update task 
 
@@ -166,7 +166,7 @@ function TodoSecondary(props) {
 export default TodoSecondary;
 ```
 
-# `TodoTertiary`
+### `TodoTertiary`
 
 This part is the TaskList which is only pop up if the `TodoSecondary` or the form, submit the task
 
