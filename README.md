@@ -43,21 +43,22 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 This part are only an update, edit and complete icon button
 
 ```
-// Import necessary packages and components
+// Import necessary packages and components //
 import React from 'react'
 import { useState } from 'react'
 import TodoSecondary from './TodoSecondary'
 import { UilPen, UilTrash, UilCheck } from '@iconscout/react-unicons'
 
-// Create a functional component Todo with props
+// Create a functional component Todo with props //
 function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
-    // Declare state variable using useState hook for editing the todos
+
+    // Declare state variable using useState hook for editing the todos //
     const [edit, setEdit] = useState({
         id: null,
         value: ''
     })
     
-    // Function to update the todo item
+    // `Function to update the todo item` //
     const submitUpdate = value => {
         updateTodo(edit.id, value)
         setEdit({
