@@ -44,7 +44,7 @@ This is the code explanation in every function  `// explanation //`
 
 This part are only an update, edit and complete icon button
 
-```
+```jsx
 // Import necessary packages and components //
 import React from 'react'
 import { useState } from 'react'
@@ -99,7 +99,7 @@ export default Todo
 
 This part is taskForm and add task/update task 
 
-```
+```jsx
 import React, { useState, useEffect, useRef } from 'react';
 
 function TodoSecondary(props) {
@@ -170,7 +170,7 @@ export default TodoSecondary;
 
 This part is the TaskList which is only pop up if the `TodoSecondary` or the form, submit the task
 
-```
+```jsx
 import React, { useState } from 'react';
 import TodoSecondary from './TodoSecondary';
 import TodoMain from './TodoMain';
